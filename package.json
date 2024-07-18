@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --base-href   =/Balloon-Pop-Angular/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "deploy": "ng deploy --base-href=/Balloon-Pop-Angular/",
     "serve:ssr:Balloon-Pop-game": "node dist/balloon-pop-game/server/server.mjs"
   },
   "private": true,
@@ -33,6 +34,7 @@
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
+    "angular-cli-ghpages": "^2.0.1",
     "autoprefixer": "^10.4.19",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",

@@ -19,8 +19,11 @@
       </div>}
       @else {
        <section class="flex flex-col gap-10 items-center ">
+         <div class ="text-3xl text-center">
+           Game Over
+          </div>
           <div class="text-3xl text-center">
-            Game Over
+            Highest Score: {{highestScore}}
           </div>
           <div class="text-2xl font-bold text-center">Score: {{score}}</div>
           <button (click)="startGame()" class="rounded-md px-2 py-1.5 bg-purple-900 text-white cursor-pointer">

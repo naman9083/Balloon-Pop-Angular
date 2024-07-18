@@ -49,15 +49,15 @@ export class BallonComponent implements OnInit{
   }
   pop() {
     const popAnimation = this.animBuilder.build([animate(
-      '2s ease-out', keyframes([
+      '.2s ease-out', keyframes([
         style({
           scale: '1.2',
           offset: 0.5
         }),
-        // style({
-        //   scale: '1.2',
-        //   offset:0.75
-        // })
+        style({
+          scale: '0.8',
+          offset:0.75
+        })
       ])
     )]);
     const player = popAnimation.create(
@@ -68,7 +68,6 @@ export class BallonComponent implements OnInit{
     });
     
     
-    this.balloonPopped.emit(this.balloon().id);
   }
   
 

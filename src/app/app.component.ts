@@ -19,8 +19,14 @@ export class AppComponent implements OnInit{
   }
   balloons: IBalloon[] = [];  
   score = 0;
+  highestScore = parseInt(localStorage.getItem('highestScore')??'0');
   missed = signal(0);
   gameOver = computed(() => { 
+    if (this.missed() == 3 && this.score>= parseInt(localStorage.getItem('highestScore')??'0')) {
+      this.highestScore = this.score;
+      localStorage.setItem('highestScore', this.score.toString());
+      
+    }
     return this.missed() == 3;
   });
 
@@ -47,7 +53,7 @@ export class AppComponent implements OnInit{
     this.missed.update(val => val + 1);
         this.balloons = this.balloons.filter((balloon) => balloon.id !== balloonId);
 
-    this.balloons.push(new Balloon());
+    this.balloons = [...this.balloons, new Balloon()];
 
     
   }
